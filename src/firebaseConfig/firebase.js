@@ -1,16 +1,15 @@
 import { initializeApp } from "firebase/app";
-
-import { getFirestore } from '@firebase/firestore'
+import { getFirestore } from "@firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "Aquí vienen tus datos",
-  authDomain: "Aquí vienen tus datos",
-  projectId: "Aquí vienen tus datos",
-  storageBucket: "Aquí vienen tus datos",
-  messagingSenderId: "Aquí vienen tus datos",
-  appId: "Aquí vienen tus datos"
+  apiKey: "AIzaSyBVRAbD81Gsr-9dShVOVOUNGgZgHtrA1Rw",
+  authDomain: "carritopw-9e77f.firebaseapp.com",
+  projectId: "carritopw-9e77f",
+  storageBucket: "carritopw-9e77f.appspot.com",
+  messagingSenderId: "1053070072329",
+  appId: "1:1053070072329:web:6a90758395e5a8eec7f6d8",
+  measurementId: "G-BFL7DNR98G"
 };
 
 const app = initializeApp(firebaseConfig);
-
 export const db = getFirestore(app)

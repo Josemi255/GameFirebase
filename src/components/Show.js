@@ -32,20 +32,21 @@ const Show = () => {
   //5 - Funcion de confirmacion para Sweet Alert 2
   const confirmDelete = (id) => {
     MySwal.fire({
-      title: '¿Elimina el producto?',
-      text: "You won't be able to revert this!",
+      title: '¿Eliminar el Producto?',
+      text: "¡No Podrás Revertir Esto!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: 'Si, Bórralo',
+      cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) { 
-        //llamamos a la fcion para eliminar   
+        //llamamos a la funcion para eliminar   
         deleteProduct(id)               
         Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
+          '¡Eliminado!',
+          'Tu Producto ha Sido liminado',
           'success'
         )
       }
@@ -63,20 +64,28 @@ const Show = () => {
       <div className='row'>
         <div className='col'>
           <div className="d-grid gap-2">
-            <Link to="/create" className='btn btn-secondary mt-2 mb-2'>Create</Link>    
+            <Link to="/create" className='btn btn-secondary mt-2 mb-2'>Crear Producto</Link>    
           </div>
           <table className='table table-dark table-hover'>
             <thead>
               <tr>
-                <th>Description</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Género</th>
+                <th>Plataforma</th>
+                <th>Publisher</th>
                 <th>Stock</th>
-                <th>Actions</th>
+                <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
               { products.map( (product) => (
                 <tr key={product.id}>
-                  <td>{product.description}</td>
+                  <td>{product.name}</td>
+                  <td>{product.price}</td>
+                  <td>{product.genre}</td>
+                  <td>{product.platform}</td>
+                  <td>{product.publisher}</td>
                   <td>{product.stock}</td>
                   <td>
                     <Link to={`/edit/${product.id}`} className="btn btn-light"><i className="fa-solid fa-pencil"></i></Link>
